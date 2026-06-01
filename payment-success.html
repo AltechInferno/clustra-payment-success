@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Successful — Clustra</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #020817;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 520px;
+      background: #030b1c;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 40px 40px 36px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .header span {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    /* ── Body ── */
+    .body {
+      padding: 56px 48px 52px;
+      text-align: center;
+    }
+
+    /* Success icon */
+    .icon-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 24px;
+      background: rgba(65, 214, 110, 0.12);
+      border: 1px solid rgba(65, 214, 110, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+    }
+
+    .icon-wrap svg {
+      width: 38px;
+      height: 38px;
+      stroke: #41D66E;
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    /* ── Steps ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+      margin-bottom: 48px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: rgba(91, 108, 255, 0.15);
+      border: 1px solid rgba(91, 108, 255, 0.25);
+      color: #5B6CFF;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.5;
+    }
+
+    .step-text strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* ── Close button ── */
+    .btn-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #5B6CFF 0%, #4F86FF 100%);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.15s;
+      box-shadow: 0 8px 32px rgba(91, 108, 255, 0.3);
+      text-decoration: none;
+    }
+
+    .btn-close:hover {
+      opacity: 0.9;
+      transform: scale(1.01);
+    }
+
+    .btn-close svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px 40px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .footer a {
+      color: #5B6CFF;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Header -->
+    <div class="header">
+      <img src="https://clustra.app/logo-white.png" alt="Clustra" onerror="this.style.display='none'" />
+      <span>Clustra</span>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+
+      <!-- Success icon -->
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      </div>
+
+      <h1>Payment successful</h1>
+      <p class="subtitle">
+        Your payment has been received and your<br />
+        Pro subscription is being activated.
+      </p>
+
+      <!-- Steps -->
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">Close this browser window or tab.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">Open the <strong>Clustra app</strong> on your desktop.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            Go to <strong>Billing</strong> and click
+            <strong>"I've paid already"</strong> to sync your subscription.
+          </div>
+        </div>
+      </div>
+
+      <!-- Close button -->
+      <button class="btn-close" onclick="window.close()">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+        Close this window
+      </button>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Questions? <a href="mailto:support@clustra.app">support@clustra.app</a>
+      &nbsp;·&nbsp; © 2026 Clustra
+    </div>
+
+  </div>
+
+  <script>
+    // Auto-attempt close after 30 seconds if the user doesn't click
+    // (only works if the tab was opened by the app via window.open)
+    setTimeout(function () {
+      window.close()
+    }, 30000)
+  </script>
+</body>
+</html>
